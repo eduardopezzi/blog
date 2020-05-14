@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import axios from "axios";
 
 export default ({ postId }) => {
@@ -22,11 +21,10 @@ export default ({ postId }) => {
           <input
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            className="btn btn-primary"
-          >
-            Submit
-          </input>
+            className="form-control"
+          />
         </div>
+        <button className="btn btn-primary">Submit</button>
       </form>
     </div>
   );
