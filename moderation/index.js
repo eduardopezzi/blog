@@ -20,6 +20,7 @@ app.post("/events", async (req, res) => {
         content: data.content,
       },
     });
+    console.log("post " + data.content + " moderated");
   }
 
   res.send({});

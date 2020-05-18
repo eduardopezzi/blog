@@ -9,7 +9,7 @@ app.use(cors());
 
 const posts = {};
 
-const handlerEvent = (type, data) => {
+const handleEvent = (type, data) => {
   if (type === "PostCreated") {
     const { id, title } = data;
 
@@ -42,7 +42,7 @@ app.get("/posts", (req, res) => {
 app.post("/events", (req, res) => {
   const { type, data } = req.body;
 
-  handlerEvent(type, data);
+  handleEvent(type, data);
 
   res.send({});
 });
@@ -54,6 +54,6 @@ app.listen(4002, async () => {
   for (let event of res.data) {
     console.log("processing event: ", event.type);
 
-    handlerEvent(event.type, event.data);
+    handleEvent(event.type, event.data);
   }
 });
